@@ -3,12 +3,21 @@
   <head> 
     <title> Countydemo </title>  
     
-  </head> 
-  <body> 
-    
-    
-    
-    
-  </body>
-  
+  </head>
+  <body>
+    <form action = '/response'>
+      Which of these genres do you like best? <br>
+      <input type="radio" name = "genre" value = "indie">
+      <label for="indie">Indie</label><br>
+      <input type="radio" name="genre" value="pop">
+      <label for="pop">Pop</label><br>
+      <input type="radio" name="genre" value="rock">
+      <label for="rock">Rock</label>
+      <br><br>
+      
+      <select name="states" id="states">
+        for x in counties:
+        <option value = x["State"]>x["State"]</option>
+      </select>
+    </body>
 </html> 
