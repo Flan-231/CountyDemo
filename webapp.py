@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def render_main():
-    get_state_options()
+    get_state_options(counties)
     return render_template('home.html', x = options)
 
 def main():
