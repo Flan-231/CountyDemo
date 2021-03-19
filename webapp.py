@@ -9,7 +9,7 @@ def main():
         counties = json.load(demographics_data)
 
 @app.route("/")
-def render_pg1():
+def render_main():
         get_state_options(counties)
         return render_template('home.html', x = options)
     
@@ -23,7 +23,10 @@ def get_state_options(counties):
     for s in listOfStates:
         options = options + Markup("<option value=\"" + s + "\">" + s + "</option>"
     return options
-
+                                   
+@app.route("/reponse")
+def render_response(options)
+    return render_template('response.html')
 
 if __name__=="__main__":
     app.run(debug=False)
