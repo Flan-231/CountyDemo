@@ -6,13 +6,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def render_main():
-    get_state_options(counties)
-    return render_template('home.html', x = options)
-
-def main():
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
-
+        get_state_options(counties)
+        return render_template('home.html', x = options)
+    
 def get_state_options(counties):
     listOfStates = list(())
     for x in counties:
