@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def render_main():
-    return render_template('home.html') 
+    return render_template('home.html', x == options) 
 
 def main():
     with open('county_demographics.json') as demographics_data:
@@ -21,8 +21,6 @@ def get_state_options():
     options = ""
     for x in listOfStates:
         options = options + Markup("<option value=\"" + s + "\">" + s + "</option>")
-	
-    return render_template('response.html', states = options)
     	
 if __name__=="__main__":
     app.run(debug=False)
