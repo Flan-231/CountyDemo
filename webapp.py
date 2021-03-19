@@ -4,10 +4,12 @@ import json
 
 app = Flask(__name__)
 
-@app.route("/")
-def render_main():
-    with open('county_demographics.json') as demographics_data:
+def main():
+    with open('county_demographics.json') as song_data:
         counties = json.load(demographics_data)
+
+@app.route("/")
+def render_pg1():
         get_state_options(counties)
         return render_template('home.html', x = options)
     
@@ -19,7 +21,9 @@ def get_state_options(counties):
     		
     options = ""
     for s in listOfStates:
-        options = options + Markup("<option value=\"" + s + "\">" + s + "</option>")
-    	
+        options = options + Markup("<option value=\"" + s + "\">" + s + "</option>"
+    return options
+
+
 if __name__=="__main__":
     app.run(debug=False)
