@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def render_main():
-    return render_template('home.html')
+    return render_template('home.html') 
 
 def main():
     with open('county_demographics.json') as demographics_data:
