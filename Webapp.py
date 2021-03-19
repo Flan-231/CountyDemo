@@ -12,8 +12,8 @@ def main():
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
 
-get_state_options
-listOfStates[]
+def get_state_options():
+    listOfStates = thislist(())
     for x in counties:
         if listOfStates.count(x["State"]) == 0:
             listOfStates.append(x["State"])
@@ -22,7 +22,7 @@ listOfStates[]
     for x in listOfStates:
         options = options + Markup("<option value=\"" + s + "\">" + s + "</option>")
 	
-	return render_template('response.html', states = options)
+    return render_template('response.html', states = options)
     	
 if __name__=="__main__":
     app.run(debug=False)
