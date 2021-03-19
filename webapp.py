@@ -14,7 +14,7 @@ def main():
         counties = json.load(demographics_data)
 
 def get_state_options():
-    listOfStates = thislist(())
+    listOfStates = list(())
     for x in counties:
         if listOfStates.count(x["State"]) == 0:
             listOfStates.append(x["State"])
