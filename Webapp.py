@@ -1,6 +1,4 @@
-from flask import Flask, request, Markup, render_template, flash, Markup
-import os 
-import json 
+from flask import Flask, request, Markup, render_template, flash, Markup, os, json 
 
 app = Flask(__name__)
 
