@@ -13,7 +13,7 @@ def main():
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
 
-def get_state_options():
+def get_state_options(counties):
     listOfStates = list(())
     for x in counties:
         if listOfStates.count(x["State"]) == 0:
