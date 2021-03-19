@@ -5,7 +5,6 @@ import json
 app = Flask(__name__)
 
 @app.route("/")
-def render_get_state_options():
 def render_main():
 
 def main():
