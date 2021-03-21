@@ -24,7 +24,7 @@ def get_state_options(counties):
     return options 
                                    
 @app.route("/reponse")
-def render_response(options)
+def render_response(get_state_options(counties))
     return render_template('response.html')
 
 if __name__=="__main__":
