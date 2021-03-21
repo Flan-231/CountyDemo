@@ -5,7 +5,7 @@ import json
 app = Flask(__name__)
 
 def main():
-    with open('county_demographics.json') as song_data:
+    with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
 
 @app.route("/")
