@@ -10,8 +10,7 @@ def main():
 
 @app.route("/")
 def render_main():
-        get_state_options(counties)
-        return render_template('home.html', x = options)
+        return render_template('home.html', x = get_state_options(counties))
     
 def get_state_options(counties):
     listOfStates = list(())
@@ -22,7 +21,7 @@ def get_state_options(counties):
     options = ""
     for s in listOfStates:
         options = options + Markup("<option value=\"" + s + "\">" + s + "</option>"
-    return options
+    return options 
                                    
 @app.route("/reponse")
 def render_response(options)
