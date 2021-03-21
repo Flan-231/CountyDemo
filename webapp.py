@@ -20,7 +20,7 @@ def get_state_options(counties):
     		
     options = ""
     for s in listOfStates:
-        options = options + Markup("<option value=\"" + s + "\">" + s + "</option>"
+        options = options + Markup("<option value=\"" + s + "\">" + s + "</option>")
     return options 
                                    
 @app.route("/reponse")
