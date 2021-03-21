@@ -9,7 +9,7 @@ def main():
         counties = json.load(demographics_data)
 
 @app.route("/")
-def render_main()
+def render_main():
     return render_template('home.html', x = get_state_options(counties))
     
 def get_state_options(counties):
