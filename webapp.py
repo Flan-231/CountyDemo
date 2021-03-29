@@ -19,6 +19,13 @@ def get_state_options():
     for s in listOfStates:
         options = options + Markup("<option value=\"" + s + "\">" + s + "</option>")
     return options 
+
+def fun_fact_by_state(state):
+    first_county = "ZZZZZZZ"
+	for county in counties: 
+		if county["County"] < first_county and county ["State"] == state:
+			first_county = county["County"]
+	return first_county 
                                    
 if __name__=="__main__":
     app.run(debug=False)
