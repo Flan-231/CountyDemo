@@ -4,9 +4,6 @@ import json
 
 app = Flask(__name__)
 
-def main():
-    
-
 @app.route("/")
 def home():
     return render_template('home.html', options=get_state_options())
