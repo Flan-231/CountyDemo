@@ -5,19 +5,19 @@ import json
 app = Flask(__name__)
 
 def main():
-    with open('county_demographics.json') as demographics_data:
-        counties = json.load(demographics_data)
+    
 
 @app.route("/")
-def render_main():
-    return render_template('home.html', x = get_state_options(counties))
+def home():
+    return render_template('home.html')
     
 def get_state_options(counties):
-    listOfStates = list(())
-    options = ""
-    for x in counties:
-        if listOfStates.count(x["State"]) == 0:
-            listOfStates.append(x["State"])
+    listOfStates = []
+    with open('county_demographics.json') as demographics_data:
+        counties = json.load(demographics_data)
+    for county in counties:
+        if not(county["State"]) in listOfStates):
+            listOfStates.append(county["State"])
             
     for s in listOfStates:
         options = options + Markup("<option value=\"" + s + "\">" + s + "</option>")
