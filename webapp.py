@@ -10,7 +10,7 @@ def home():
     
 def get_state_options():
     listOfStates = []
-    with open('county_demographics.json') as demographics_data:
+    with open('demographics.json') as demographics_data:
         counties = json.load(demographics_data)
     for county in counties:
         if not(county["State"]) in listOfStates):
