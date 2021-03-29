@@ -9,7 +9,7 @@ def main():
 
 @app.route("/")
 def home():
-    return render_template('home.html')
+    return render_template('home.html', options=get_state_options())
     
 def get_state_options(counties):
     listOfStates = []
@@ -19,14 +19,9 @@ def get_state_options(counties):
         if not(county["State"]) in listOfStates):
             listOfStates.append(county["State"])
     options = ""
-            
     for s in listOfStates:
         options = options + Markup("<option value=\"" + s + "\">" + s + "</option>")
     return options 
                                    
-@app.route("/reponse")
-def render_response():
-    return render_template('response.html', x = get_state_options(counties))
-
 if __name__=="__main__":
     app.run(debug=False)
