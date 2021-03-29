@@ -3,12 +3,19 @@
   <head> 
     <title> Countydemo </title>  
   </head>
+  
   <body>
+    
+    <form action="/funFact">
+      <label for="state">Choose a state:</label>
       <select name="state" id="state">
-        for x in options:
-        <option value = {{x}}>{{x}} </option>
-      </select>
-    <br><br>
-    <input type = "submit" value = "get a fun fact?">
+        {{options}}
+        </select>
+        <br><br>
+        <input type = "submit" value = "get a fun fact?">
+    </form>
+    
+    <p>{{funfact}}</p>
+    
     </body>
 </html> 
