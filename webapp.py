@@ -22,7 +22,7 @@ def get_state_options():
 
 def fun_fact_by_state(state):
     first_county = "ZZZZZZZ"
-	for county in counties: 
+    for county in counties: 
         if county["County"] < first_county and county ["State"] == state:
             first_county = county["County"]
     return first_county 
