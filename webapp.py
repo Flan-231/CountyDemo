@@ -13,7 +13,7 @@ def get_state_options():
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
     for county in counties:
-        if not(county["State"]) in listOfStates:
+        if not(county["State"] in listOfStates):
             listOfStates.append(county["State"])
     options = ""
     for s in listOfStates:
