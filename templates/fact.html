@@ -8,11 +8,11 @@
     
     <form action="/fact">
       <label for="state">Choose a state:</label>
-      <select name="state" id="state" onchange="this.form.submit();">
+      <select name="state" id="state">
         {{options}}
       </select>
       <br><br>
-      <input type = "submit" value = "get a fun fact">
+      <input type = "submit" value = "get a fun fact" onchange="this.form.submit();">
     </form>
     
     <p>{{funFact}}</p>
