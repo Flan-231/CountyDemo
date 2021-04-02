@@ -33,8 +33,9 @@ def fun_fact_by_state(state):
     
     for x in counties:
         if x["State"] == state:
-            occupied = x["Housing"]["Housing Units"] / x["Housing"]["Households"]
-            occupied = occupied * 10
+            occupied = x["Housing"]["Households"] / x["Housing"]["Housing Units"]
+            
+            occupied = Math.round(occupied * 100.00)
             if occupied > highest:
                 highest = occupied
                 highCounty = x["County"]
@@ -42,7 +43,7 @@ def fun_fact_by_state(state):
     	        lowest = lowest
             elif occupied < lowest:
                 lowest = occupied
-                lowCounty = x["County"]
+                lowCounty = x["County"]    
     	
     return "The county with the highest occupancy rate in " + state + " is " + highCounty + " (" + str(highest) + "%)" + " and the county with the lowest occupancy rate in " + state + " is " + lowCounty + " (" + str(lowest) + "%)"
 
