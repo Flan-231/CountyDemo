@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template('home.html', options=get_state_options())
+    render_template('home.html', options=get_state_options())
 
 @app.route("/fact")
 def fact():
