@@ -28,14 +28,24 @@ def get_state_options():
 def fun_fact_by_state(state):
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
-    def high_income_counties(counties):
-        """Return a LIST of the counties with a median household income over $90,000."""
-        y = []
-        for x in counties:
-            if x["Income"]["Median Houseold Income"] > 90000:
-                addCounty = x["County"]
-                y.append(addCounty)
-        return y
+    highest = 0
+    lowest = 100
+    
+    for x in counties:
+        if x["State"] = state:
+            occupied = x["Housing"]["Housing Units"] / x["Housing"]["Households"]
+            occupied = occupied * 10
+            if occupied > highest:
+                highest = occupied
+                highCounty = x["County"]
+            elif occupied == 0:
+    	        lowest = lowest
+            elif occupied < lowest:
+                lowest = occupied
+                lowCounty = x["County"]
+    	
+    return "the county with the highest occupancy rate is " + highCounty + " (" + str(highest) + "%)" + " and the county with the lowest occupancy rate is " + lowCounty + " (" + str(lowest) + "%)"
+
                                    
 if __name__=="__main__":
     app.run(debug=False)
