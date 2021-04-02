@@ -7,9 +7,9 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return render_template('home.html', options=get_state_options())
-
+@app.route("/fact")
 def fact():
-    return render_template('home.html', funFact = fun_fact_by_state(state))
+    return render_template('reponse.html', funFact = fun_fact_by_state(state))
     
 def get_state_options():
     listOfStates = []
