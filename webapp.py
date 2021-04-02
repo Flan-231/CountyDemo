@@ -26,11 +26,16 @@ def get_state_options():
     return options 
 
 def fun_fact_by_state(state):
-    first_county = "ZZZZZZZ"
-    for county in counties: 
-        if county["County"] < first_county and county ["State"] == state:
-            first_county = county["County"]
-    return first_county 
+    with open('county_demographics.json') as demographics_data:
+        counties = json.load(demographics_data)
+    def high_income_counties(counties):
+        """Return a LIST of the counties with a median household income over $90,000."""
+        y = []
+        for x in counties:
+            if x["Income"]["Median Houseold Income"] > 90000:
+                addCounty = x["County"]
+                y.append(addCounty)
+        return y
                                    
 if __name__=="__main__":
     app.run(debug=False)
