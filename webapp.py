@@ -35,7 +35,7 @@ def fun_fact_by_state(state):
         if x["State"] == state:
             occupied = x["Housing"]["Households"] / x["Housing"]["Housing Units"]
             
-            occupied = Math.round(occupied * 100.00)
+            occupied = occupied.2f
             if occupied > highest:
                 highest = occupied
                 highCounty = x["County"]
