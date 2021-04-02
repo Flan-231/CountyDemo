@@ -11,7 +11,7 @@ def home():
 @app.route("/fact")
 def fact():
     state = request.args['state']
-    return render_template('fact.html', funFact = fun_fact_by_state(state))
+    return render_template('fact.html', options = get_state_options(), funFact = fun_fact_by_state(state))
     
 def get_state_options():
     listOfStates = []
